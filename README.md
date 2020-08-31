@@ -1,30 +1,39 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Overview
 
-## Getting Started
+This repo contains boilerplate for creating a Next.js app that can source/write data to a Hasura endpoint. Users are also able to Login/Signup utilizing an Auth0 integration. Below you will find instructions on everything needed to get up and rolling.
 
-First, run the development server:
+### What you'll Need
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+- [Auth-0 Tenant & API](https://auth0.com/docs/get-started)
+- [Hasura Graphql Endpoint](https://hasura.io/learn/)
+- That's it!
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Quick Start Guide
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+##### Install dependencies
 
-## Learn More
+`npm install`
 
-To learn more about Next.js, take a look at the following resources:
+##### Set Environment Variables
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Navigate into your project directory and run:
+`cp .env.template .env.local`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Add the corresponding info (while in development you can leave `https://localhost:3000`)
 
-## Deploy on Vercel
+##### Update `./lib/apolloClient.js`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+You will need to update the uris on line 36 && line 46 to correspond with your Hasura Endpoint.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Auth0 Updates
+
+Within your Auth0 application settings:
+
+- Add `https://localhost:3000/callback` && `https://localhost:3000/api/callback` to Allowed Callback URLs
+- Add `https://localhost:3000` to Allowed Logout URLs && Allowed Web Origins
+
+[Add rules for user creation into Hasura](https://hasura.io/learn/graphql/hasura/authentication/)
+
+### Boom. You should be all set!
+
+`npm run dev`
