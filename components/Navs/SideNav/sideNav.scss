@@ -1,0 +1,41 @@
+@import "styles/variables";
+
+.side-nav {
+  grid-area: "nav-bar";
+  border-right: 1px solid #212121;
+  transition: 0.2s;
+
+  ul {
+    padding: 0;
+  }
+
+  li {
+    list-style-type: none;
+    padding: 15px 0 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    transition: 0.3s;
+
+    svg {
+      margin-right: 5px;
+    }
+
+    &:hover {
+      background: $color-grey;
+      color: $color-white;
+    }
+  }
+
+  .nav-arrow {
+    display: flex;
+    margin-bottom: 90px;
+    justify-content: flex-end;
+
+    svg {
+      cursor: pointer;
+      margin: 30px;
+    }
+  }
+}

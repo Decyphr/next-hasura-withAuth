@@ -1,0 +1,30 @@
+@import "styles/variables";
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: $fonts-secondary;
+  color: $color-grey;
+}
+
+h1,
+h2,
+h3 {
+  font-family: $fonts-primary;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  padding: 5px 15px;
+  border: 1px solid $color-grey;
+  background: #fff;
+}

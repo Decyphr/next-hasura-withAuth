@@ -1,0 +1,24 @@
+@import "styles/variables";
+
+.dasboard-container {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    "top-nav" "top-nav"
+    "nav-bar" "main-view";
+}
+
+.dashboard-top-nav {
+  grid-area: "top-nav";
+  grid-column: span 2;
+  height: 60px;
+  background: $color-grey;
+}
+
+.dashboard-main--view {
+  width: 100%;
+  padding: 30px;
+}
